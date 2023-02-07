@@ -1,0 +1,203 @@
+/* width and height percentages */
+/* relative to containing's block width - parent container*/
+
+/* MARGIN percentages are relative to the "inline size" 
+    which is the width specified for inline element 
+    this applies to both ***** top and bottom margin***** */
+
+/* //////////////////// Set to border-box //////////////////// */
+html {
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+/* //////////////////// Set to border-box //////////////////// */
+
+body {
+    background-color: rgb(152, 166, 189);
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    background-image: url("favicon-32x32.png");
+}
+
+/* zero top margin */
+h2,h3,h4, p{
+    margin: 0;
+}
+
+.main-container{
+    /* background-color: black; */
+    width: 800px;
+    height: 500px;
+
+   /* absolute taken out of normal flow, then offset it*/
+   position: absolute; 
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+
+   border-radius: 15px;
+   overflow: hidden;
+   box-shadow: 13px 12px 23px -1px rgba(0,0,0,0.75);
+}
+
+.top-div {
+    background-color: white;
+
+    /* width and height percentages */
+    /* relative to containing's block width */
+    /* rmb, content size, so if there is padding with display = border-box */
+    width: 100%;
+    height: 45%; 
+
+    /* 
+        main-container size:
+        width: 1000px;
+        height: 600px; here: 270px
+    */
+    /* margin-top: 15%; hence will be 150px, 15% of inline/width
+    margin-bottom: 15%; */
+
+ /* border-top-left-radius: 15px;
+    border-top-right-radius: 15px; */
+    padding: 35px;
+}
+
+.top-div h2 {
+    color: rgb(42, 178, 175);
+    height: 33%;
+}
+
+.top-div h3 {
+    color: rgb(145, 190, 71);
+    height: 33%;
+}
+
+.top-div p {
+    color: rgb(152, 166, 189);
+    height: 335;
+}
+
+.top-div h2, .top-div h3, .top-div p {
+    padding: 10px
+}
+
+
+.btm-div {
+    /* background-color: pink; */
+    width: 100%;
+    height: 55%;
+}
+
+.left-btm-div {
+    background-color: rgb(42, 178, 175);
+     /*just width and height, so containing block  */
+    width: 50%;
+    height: 100%;
+
+    /* ???????????????????? */
+    /* don't want inline because they don't respect the width an height property */
+    /* ???????????????????? */   
+    /* remember no whitespace betweeen html elements */
+    display: inline-block;
+    /* when set inline-block display, "activates"  vertical-align */
+    vertical-align: top;
+
+    /* percentages still based on the containing block */
+    /* position: absolute; */
+    right: 50%;
+    /* border-bottom-left-radius: 15px; */
+    padding-top: 25px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.right-btm-div {
+    background-color: rgb(81, 207, 204);    
+    width: 50%;
+    height: 100%;
+
+    display: inline-block;
+    /* position: absolute; */
+    left: 50%;
+    vertical-align: top;
+    /* border-bottom-right-radius: 15px; */
+    padding-top: 25px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    /* padding-right: 50px; */
+}
+
+.left-btm-div h3 {
+    height: 30%;
+    width: 100%;
+    padding-top: 20px
+}
+
+.price-container{
+    padding-bottom: 10px;
+}
+
+.btm-div h3, .btm-div .dollar, .btm-div .button, .btm-div p, .btm-div .month {
+    color: white ;
+}
+
+.left-btm-div p {
+    /* color: rgb(255,255,255,0.8); */
+    /* or just use OPACITY - comment color and add element to CSS above */
+    padding-bottom: 30px;
+    opacity: 0.8;
+}
+
+.dollar{
+    /* background-color: green; */
+    /* width: 50%; */
+    height: 30%;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.month {
+    height: 30%;
+    display: inline-block;
+    font: 0.8rem;
+    position: relative;
+    left: 10px;
+    bottom: 5px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    height: 20%;
+    background-color: rgb(192, 223, 52);
+    border-radius: 10px;
+    border: none;
+}
+
+.button:hover{
+    background-color: rgb(192, 223, 52, 0.5);
+}
+
+.btm-div .month, .btm-div li {
+    color: rgb(255,255,255,0.5);
+}
+
+.right-btm-div h3 {
+    padding-top: 20px;
+}
+
+li {
+    list-style: none;
+    padding: 2px 0;
+}
+
+ul {
+    padding: 0;
+}

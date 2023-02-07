@@ -1,0 +1,278 @@
+/* width and height percentages */
+/* relative to containing's block width - parent container*/
+
+/* MARGIN percentages are relative to the "inline size" 
+    which is the width specified for inline element 
+    this applies to both ***** top and bottom margin***** */
+
+/* //////////////////// Set to border-box //////////////////// */
+html {
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+/* //////////////////// Set to border-box //////////////////// */
+
+body {
+    background-color: rgb(152, 166, 189);
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* zero top margin */
+h2,h3,h4, p{
+    margin: 0;
+}
+
+.main-container{
+    /* background-color: black; */
+    width: 800px;
+    height: 500px;
+
+    /* NOTES: */
+    /* margin: auto; */
+    /* set div middle of page */
+    /* percentage is relative to the inline size
+        which is the width and height specified
+        hence setting percentages wouldn't work
+        this example, div is a inline which width spans forever 
+        and horizontal is based on body and body is based screen size
+        HENCE JUST USE "margin = auto"
+    */
+    /* margin-top: 9.5%;
+    margin-bottom: 25%;
+    margin-left: 25%;
+    margin-right: 25%; */
+    /* :NOTES */
+
+   /* to set vertically middle */
+
+   /* absolute taken out of normal flow, then offset it*/
+   position: absolute; 
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+
+   border-radius: 15px;
+   overflow: hidden;
+   box-shadow: 13px 12px 23px -1px rgba(0,0,0,0.75);
+}
+
+.top-div {
+    background-color: white;
+
+    /* width and height percentages */
+    /* relative to containing's block width */
+    /* rmb, content size, so if there is padding with display = border-box */
+    width: 100%;
+    height: 45%; 
+
+    /* 
+        main-container size:
+        width: 1000px;
+        height: 600px; here: 270px
+    */
+    /* margin-top: 15%; hence will be 150px, 15% of inline/width
+    margin-bottom: 15%; */
+
+ /* border-top-left-radius: 15px;
+    border-top-right-radius: 15px; */
+    padding: 35px;
+}
+
+.top-div h2 {
+    color: rgb(42, 178, 175);
+    height: 33%;
+}
+
+.top-div h3 {
+    color: rgb(145, 190, 71);
+    height: 33%;
+}
+
+.top-div p {
+    color: rgb(152, 166, 189);
+    height: 335;
+}
+
+.top-div h2, .top-div h3, .top-div p {
+    padding: 10px
+}
+
+/* JUST SET BOX-SIZING TO BORDER-BOX AND SET PADDING!! 
+    easier than creating another div then 
+    position as absolute and offset it*/
+/* .top-inner-div { */
+    /* background-color: aqua; */
+
+    /* make sure to set parent container to relative or else
+        these values will not be relative to it */
+    /* width: 85%;
+    height: 70%;
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%,-50%);
+}  */
+
+/* h2 {
+    margin-bottom: 30px;
+}
+
+h3,h4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+} */
+
+.btm-div {
+    /* background-color: pink; */
+    width: 100%;
+    height: 55%;
+
+    /* relative still normal flow of document 
+        BUT CAN offset from it's original position*/
+    /* position: relative; */
+
+    /* ******************************************************************** */
+    /* top, btm, left, right: percentages, relative to the containing block */
+    /* ******************************************************************** */
+    /* container here now is the div.main-container k*/
+    /* top: 50%; */
+    /* border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px; */
+
+    /* cannot pad btm div, will see sthe colour difference */
+    /* padding: 20px; */
+}
+
+.left-btm-div {
+    background-color: rgb(42, 178, 175);
+     /*just width and height, so containing block  */
+    width: 50%;
+    height: 100%;
+
+    /* ???????????????????? */
+    /* don't want inline because they don't respect the width an height property */
+    /* ???????????????????? */   
+    /* remember no whitespace betweeen html elements */
+    display: inline-block;
+    /* when set inline-block display, "activates"  vertical-align */
+    vertical-align: top;
+
+    /* if parent element/container is not relative, 
+        and with absolute positioning, 
+        it will be taken out of the normal flow, */
+    
+    /*  
+        When position is set to absolute or fixed, the top property 
+        specifies the distance between the element's outer margin of 
+        top edge and the inner border of the top edge of its containing 
+        block.
+    */
+
+    /* percentages still based on the containing block */
+    /* position: absolute; */
+    right: 50%;
+    /* border-bottom-left-radius: 15px; */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.right-btm-div {
+    background-color: rgb(81, 207, 204);    
+    width: 50%;
+    height: 100%;
+
+    display: inline-block;
+    /* position: absolute; */
+    left: 50%;
+    vertical-align: top;
+    /* border-bottom-right-radius: 15px; */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    /* padding-right: 50px; */
+}
+
+/* .try {
+    background-color: pink;
+    width: 150px;
+    height: 150px;
+    position: relative;
+} */
+
+.left-btm-div h3 {
+    height: 30%;
+    width: 100%;
+    padding-top: 20px
+}
+
+.price-container{
+    padding-bottom: 10px;
+}
+
+.btm-div h3, .btm-div .dollar, .btm-div .button, .btm-div p, .btm-div .month {
+    color: white ;
+}
+
+.left-btm-div p {
+    /* color: rgb(255,255,255,0.8); */
+    /* or just use OPACITY - comment color and add element to CSS above */
+    padding-bottom: 30px;
+    opacity: 0.8;
+}
+
+.dollar{
+    /* background-color: green; */
+    /* width: 50%; */
+    height: 30%;
+    /* position: absolute; */
+    /* right: 50%; */
+    display: inline-block;
+    /* text-align: left; */
+    /* padding: 10px; */
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.month {
+    /* background-color: blue; */
+    /* width: 50%; */
+    height: 30%;
+    /* position: absolute; */
+    /* left: 50% */
+    display: inline-block;
+    /* text-align: left; */
+    /* padding: 10px; */
+    font: 0.8rem;
+    position: relative;
+    left: 10px;
+    bottom: 5px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    height: 20%;
+    background-color: rgb(192, 223, 52);
+    border-radius: 10px;
+    border: none;
+}
+
+.button:hover{
+    background-color: rgb(192, 223, 52, 0.5);
+}
+
+.btm-div .month, .btm-div li {
+    color: rgb(255,255,255,0.5);
+}
+
+.right-btm-div h3 {
+    padding-top: 20px;
+}
